@@ -1,0 +1,136 @@
+@import 'vars.scss';
+@import 'fonts.scss';
+
+body {
+    color: $primary-text-color;
+    // background-image: url("../assets/bg.jpg");
+    background-color: $background-color;
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    font-family: $font-main;
+}
+
+/* general link styling */
+a, a:focus, a:active, a:visited {
+    text-decoration: none;
+    color: $primary-text-color;
+
+    &:hover {
+        text-decoration: none;
+        color: $color-highlight;
+    }
+}
+
+/* container for everything */
+.container {
+    margin: auto;
+    height: 100%;
+}
+
+/* center time, date and search */
+div.time, div.date, div.search {
+    text-align: center;
+}
+
+div.time {
+    margin-bottom: 1rem;
+    font-weight: 900;
+    font-size: xx-large;
+}
+
+div.date {
+    margin-top: 1rem;
+    font-weight: 900;
+    font-size: medium;
+}
+
+div.search, .search-label {
+    width: 100%;
+}
+
+#search-bar {
+    width:50%;
+    border:none;
+    border-bottom: 2px solid $primary-text-color;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    background-color: transparent;
+    color: $primary-text-color;
+    outline: 0;
+
+    &:focus {
+        border-color: $color-highlight;
+        color: $color-highlight;
+        transition: all 0.5s;
+    }
+}
+
+div.card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    div.card {
+        display: inline-block;
+        min-width: 250px;
+        width: 20%;
+        background-color: $card-color;
+        padding-bottom: 2em;
+        
+        margin: 1em;
+        border-radius: 15px 15px 5px 5px;
+        /* Add shadows to create the "card" effect */
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: 0.3s;
+
+        /* On mouse-over, add a deeper shadow */
+        &:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7), 0 12px 28px 0 rgba(0, 0, 0, 0.39);
+        }
+
+        div.card-title {
+            height: 2.5em;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 900;
+            border-radius: 15px 15px 0px 0px;
+
+            /* https://stackoverflow.com/a/33221185 */
+            &:before {
+                content: "";
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
+        }
+
+        div.card-body {
+            font-family: $font-secondary;
+            padding-top: 1em;
+            padding-left: 3em;
+
+            /* do not display the logo */
+            .link-logo {
+                filter: grayscale(100%) brightness(125%);
+                width: 16px;
+                opacity: 0;
+                -webkit-transition: all 0.3s ease-in-out;
+                -moz-transition: all 0.3s ease-in-out;
+                -o-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+            }
+
+            /* display the logo when hovering or focusing the link */
+            .link a {
+                &:hover, &:focus {
+                    .link-logo {
+                        filter: grayscale(0) brightness(105%);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

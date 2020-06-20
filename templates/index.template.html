@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>ᕕ( ᐛ )ᕗ</title>
+  <meta name="description" content="Simple Startpage">
+  <meta name="author" content="b-01">
+
+  <link rel="stylesheet" href="css/styles.min.css">
+</head>
+
+<body>
+    <div class="container">
+        {# checkbox to display/hide the hidable cards #}
+        <input type="checkbox" id="display_hideable_cards" onclick="hideable_value_store()"/>
+        {# date/time block #}
+        <div id="date" class="date">00.00.0000</div>
+        <div id="time" class="time">00:00:00</div>
+        {# search bar #}
+        <div class="search">
+            <label class="search-label">
+                <input id="search-bar" type="text" autocomplete="off" maxlength="100" placeholder="search" autofocus="autofocus" target="_blank"/>
+            </label>
+        </div>
+        {# cards #}
+        <div class="card-container">
+            {% for c in card %}
+            <div class="card{% if c.hideable %} hideable{% endif %}">
+                <div class="card-title">{{ c.title }}</div>
+                <div class="card-body">
+                    {% for l in c.link %}
+                    <div class="link">
+                        <a href="{{ l.link }}">
+                            {{ l.name }} <img class="link-logo" src="assets/{{ l.icon }}"/>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
