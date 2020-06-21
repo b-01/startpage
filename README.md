@@ -2,6 +2,8 @@
 
 Simple HTML Startpage that displays the time, date, a searchbar and customizable (plus hideable) cards.
 
+![Demo GIF](docs/demo.gif)
+
 The startpage is generated using the `generate.py` Python3 script, so that one does not need to fiddle with HTML code when needing new cards or change links.
 
 *HTML* code is generated using [Jinja2](https://jinja.palletsprojects.com/en/2.11.x/) templates. That way cards can be dynamically created using a YAML config file (see [config/config-template.yml](config/config-template.yml)).
