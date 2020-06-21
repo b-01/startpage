@@ -12,6 +12,10 @@ The startpage is generated using the `generate.py` Python3 script, so that one d
 
 *Fonts* - just some basic embedded Google Fonts ([Roboto](https://fonts.google.com/specimen/Roboto) and [Open Sans](https://fonts.google.com/specimen/Open+Sans))
 
+## Demo
+
+A demo of the startpage is hosted via github-pages under: [https://b-01.github.io/startpage/](https://b-01.github.io/startpage/)
+
 # Generating a Startpage
 
 To generate a new Startpage, the only requirement is [Python3](https://www.python.org/downloads/). Everything else will be pulled in automatically using the steps below.
@@ -72,3 +76,11 @@ optional arguments:
   -s SOURCE_PATH, --source-path SOURCE_PATH
                         path where all the resource files are stored (css, js, img etc.)
 ```
+
+# Acknowledgement
+
+Found the startpages of many talented users on Reddits [/r/startpages](https://www.reddit.com/r/startpages/) and wanted to create my own. As my HTML/CSS foo is not good enough, I borrowed some stuff. Many thanks to:
+
+- [u/interestingquoter](https://www.reddit.com/user/interestingquoter/) - Favicons on hover: https://github.com/arbitrarily/startpage
+- [u/s1ck_](https://www.reddit.com/user/s1ck_/) - Search bar styling: https://github.com/aftabm25/StartPage
+- [u/imVampi](https://www.reddit.com/user/imVampi/) - Javascript for search bar: https://github.com/imVampi/Asuka-Start
