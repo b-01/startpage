@@ -229,33 +229,33 @@ def write_template(html_data: Text, filename: Text, output_path: Path, overwrite
 
 def main():
     parser = argparse.ArgumentParser(description="Generate the Startpage HTML and CSS.")
-    parser.add_argument("config", type=Path, help="path to the config file")
-    parser.add_argument("template", type=Path, help="path to the template file")
+    parser.add_argument("config", type=Path, help="Path to the config file")
+    parser.add_argument("template", type=Path, help="Path to the template file")
     parser.add_argument("-v", "--verbose", required=False, action="store_true", help="More verbose output")
     parser.add_argument("-o",
                         "--output-path",
                         required=False,
                         type=Path,
                         default=Path("./dist"),
-                        help="path to output the finished Startpage files to")
+                        help="Path to output the finished Startpage files to. Defaults to './dist'.")
     parser.add_argument("-1",
                         "--one-file",
                         required=False,
                         default=False,
                         action="store_true",
-                        help="Include all files into one big HTML file")
+                        help="Include all files into one big HTML file. Fonts are not included right now.")
     parser.add_argument("-f",
                         "--force-overwrite",
                         action="store_true",
                         default=False,
                         required=False,
-                        help="when present, overwrites any existing file under 'output_path'")
+                        help="When present, overwrites any existing file under 'output_path'")
     parser.add_argument("-s",
                         "--source-path",
                         required=False,
                         type=Path,
                         default=Path("./dist"),
-                        help="path where all the resource files are stored (css, js, img etc.)")
+                        help="Path where all the resource files are stored (css, js, img etc.). Defaults to './dist'.")
 
     args = parser.parse_args()
 
@@ -279,6 +279,7 @@ def main():
     for card in config["card"]:
         for link in card["link"]:
             domain = prepare_domain(link["link"])
+            # download the favicon and add a new config entry 'link'
             if download_favicon(domain, download_path=args.output_path):
                 link["icon"] = f"{domain}.png"
             else:
