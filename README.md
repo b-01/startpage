@@ -65,26 +65,26 @@ To generate the HTML file using the python script, first activate the environmen
 
 ### generate.py --help output
 ```sh
-$> python generate.py -h
+$> python generate.py --help
 
 usage: generate.py [-h] [-v] [-o OUTPUT_PATH] [-1] [-f] [-s SOURCE_PATH] config template
 
-Generate the Startpage HTML.
+Generate the Startpage HTML and CSS.
 
 positional arguments:
-  config                path to the config file
-  template              path to the template file
+  config                Path to the config file
+  template              Path to the template file
 
 optional arguments:
   -h, --help            show this help message and exit
   -v, --verbose         More verbose output
   -o OUTPUT_PATH, --output-path OUTPUT_PATH
-                        path to output the finished Startpage files to
-  -1, --one-file        Include all files into one big HTML file
+                        Path to output the finished Startpage files to. Defaults to './dist'.
+  -1, --one-file        Include all files into one big HTML file. Fonts are not included right now.
   -f, --force-overwrite
-                        when present, overwrites any existing file under 'output_path'
+                        When present, overwrites any existing file under 'output_path'
   -s SOURCE_PATH, --source-path SOURCE_PATH
-                        path where all the resource files are stored (css, js, img etc.)
+                        Path where all the resource files are stored (css, js, img etc.). Defaults to './dist'.
 ```
 
 # Acknowledgement
