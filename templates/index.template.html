@@ -30,9 +30,9 @@
             <div class="card{% if c.hideable %} hideable{% endif %}">
                 <div class="card-title">{{ c.title }}</div>
                 <div class="card-body">
-                    {% for l in c.link %}
+                    {% for l in c.list %}
                     <div class="link">
-                        <a href="{{ l.link }}">
+                        <a href="{{ l.url }}">
                             {{ l.name }} <img class="link-logo" src="assets/{{ l.icon }}"/>
                         </a>
                     </div>

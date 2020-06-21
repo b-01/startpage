@@ -276,14 +276,15 @@ def main():
     config = load_config(args.config)
     logger.debug(config)
 
-    for card in config["card"]:
-        for link in card["link"]:
-            domain = prepare_domain(link["link"])
-            # download the favicon and add a new config entry 'link'
+    # download favicons if there is a list of "url" in the config file
+    for card in config.get("card", []):
+        for entry in card.get("list", []):
+            domain = prepare_domain(entry["url"])
+            # download the favicon and add a new config entry 'icon'
             if download_favicon(domain, download_path=args.output_path):
-                link["icon"] = f"{domain}.png"
+                entry["icon"] = f"{domain}.png"
             else:
-                link["icon"] = "_default.png"
+                entry["icon"] = "_default.png"
 
     template = load_template(args.template)
 

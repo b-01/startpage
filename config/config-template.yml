@@ -1,20 +1,20 @@
 card:
   - title: Card 1
-    link:
-      - link: https://www.reddit.com
+    list:
+      - url: https://www.reddit.com
         name: Reddit
-      - link: https://www.twitter.com
+      - url: https://www.twitter.com
         name: Twitter
-      - link: https://www.facebook.com
+      - url: https://www.facebook.com
         name: Facebook
-      - link: https://www.reddit.com/r/startpages
+      - url: https://www.reddit.com/r/startpages
         name: Startpages
-      - link: https://www.reddit.com/r/netsec/
+      - url: https://www.reddit.com/r/netsec/
         name: Netsec
-      - link: https://news.ycombinator.com/
+      - url: https://news.ycombinator.com/
         name: Hackernews
   - title: Hideable Card
     hideable: True
-    link:
-      - link: https://portal.office.com
+    list:
+      - url: https://portal.office.com
         name: O365 Portal
