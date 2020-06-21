@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>ᕕ( ᐛ )ᕗ</title>
+<meta content="Simple Startpage" name="description"/>
+<meta content="b-01" name="author"/>
+<style type="text/css">@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:local("Open Sans Regular"),url("fonts/OpenSans-Regular.ttf") format("truetype")}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:local("Roboto"),local("Roboto-Regular"),url("fonts/Roboto-Regular.ttf") format("truetype")}@font-face{font-family:'Roboto';font-style:normal;font-weight:900;font-display:swap;src:local("Roboto"),local("Roboto-Regular"),url("fonts/Roboto-Black.ttf") format("truetype")}body{color:#dcdcdc;background-color:#2E2E2E;font-family:"Roboto",sans-serif}a,a:focus,a:active,a:visited{text-decoration:none;color:#dcdcdc}a:hover,a:focus:hover,a:active:hover,a:visited:hover{text-decoration:none;color:#adff2f}.container{margin:auto;height:100%}div.time,div.date,div.search{text-align:center}div.time{margin-bottom:1rem;font-weight:900;font-size:xx-large}div.date{margin-top:1rem;font-weight:900;font-size:medium}div.search,.search-label{width:100%}#search-bar{width:50%;border:none;border-bottom:2px solid #dcdcdc;margin-top:2em;margin-bottom:2em;padding-bottom:1em;background-color:transparent;color:#dcdcdc;outline:0}#search-bar:focus{border-color:#adff2f;color:#adff2f;transition:all 0.5s}div.card-container{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center}div.card-container div.card{display:inline-block;min-width:250px;width:20%;background-color:#424242;padding-bottom:2em;margin:1em;border-radius:15px 15px 5px 5px;box-shadow:0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);transition:0.3s}div.card-container div.card:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.7),0 12px 28px 0 rgba(0,0,0,0.39)}div.card-container div.card div.card-title{height:2.5em;text-align:center;text-transform:uppercase;font-weight:900;border-radius:15px 15px 0px 0px}div.card-container div.card div.card-title:before{content:"";display:inline-block;height:100%;vertical-align:middle}div.card-container div.card div.card-body{font-family:"Open Sans",sans-serif;padding-top:1em;padding-left:3em}div.card-container div.card div.card-body .link-logo{filter:grayscale(100%) brightness(125%);width:16px;opacity:0;-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out}div.card-container div.card div.card-body .link a:hover .link-logo,div.card-container div.card div.card-body .link a:focus .link-logo{filter:grayscale(0) brightness(105%);opacity:1}
+</style>
+</head>
+<body>
+<div class="container">
+<input id="display_hideable_cards" onclick="hideable_value_store()" type="checkbox"/>
+<div class="date" id="date">00.00.0000</div>
+<div class="time" id="time">00:00:00</div>
+<div class="search">
+<label class="search-label">
+<input autocomplete="off" autofocus="autofocus" id="search-bar" maxlength="100" placeholder="search" target="_blank" type="text"/>
+</label>
+</div>
+<div class="card-container">
+<div class="card">
+<div class="card-title">Card 1</div>
+<div class="card-body">
+<div class="link">
+<a href="https://www.reddit.com">
+                            Reddit <img class="link-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAV1BMVEVHcEz/RAD/RAD/RQD/QgD/RAD/RAD/RAD/PwD/OwD/RAD/RAD//fz/SAX/8+//bjj/hFf/on//6eH/xK7/VRX/uqD/kmr/tZr/3dH/qor/YSb/XCD/1MWs8J9KAAAAC3RSTlMAku7tSOT7qhgGkZoDmNkAAAABYktHRACIBR1IAAAAoElEQVQYlV1PSRLDIAwzDYRQG7MlkO3/76wh00Ori0ca25IAAJy2Zp6N1Q4GFvXCgZdaBreDeY8erShOPbzWtK2oHOhpCGtdowiThucAQ5QtmRYM+vOM2763eF2IBmYMOTMTMecccO4CU4rM8SDugkHcqDSio1DxciJPI9HOvBPV/lRsfcp3KTcfvtv2YD6k1lIQWwn2jT5gnzLv33J/9T+4IArXbYNZeAAAAABJRU5ErkJggg=="/>
+</a>
+</div>
+<div class="link">
+<a href="https://www.twitter.com">
+                            Twitter <img class="link-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAaBJREFUOI3Vkb9rU2EUhp/z3XubS9pUwYoNRaKDk6ODFBysODkJDi5qogVHQekfoAgu+g84aAImgUI3VxV0du6sWKNWEJq0eu/9fhynhKRNd32n7xy+9+E958B/oaWN/plqc3fjRKv/eNhbeP6zCiAAx1uDayW4utWo3NxvrrYGT2fS8pq6AkyE2uyLiOxkmb+/fffoGwNgPMvR7NyNpVb//X5AkiRrIf+NeovaDEx0UpXTUUkujBIoUOvmSgiot97DB6f64kfjSKfWLVRtNgJKFOOde/u1MX8ZwAAce7lXV1e8Uw0gEsVRvJImpXatm0+Yh3KKHb4NwOL58muTzl5CA6ii3qGuQG1+cKMmRtV0JgCbZ+VXMdh7pGiOyOHnEEFdXmzfmWtPAAB6q5WHAjuImW4GJJ7Be22P90a/BXBBOgRvp6WQKCHY4nPv9vzqVADAt0blgXPyhKBhPLYkKcHZT1v1yqkDYIDaqz8XfXDPolJ6DgzqChABY1Cb73ql2atX7k0da7xYbPaviMh1JCwEbzYljta/3yp/PHQp/4T+AgbtsdyJATuvAAAAAElFTkSuQmCC"/>
+</a>
+</div>
+<div class="link">
+<a href="https://www.facebook.com">
+                            Facebook <img class="link-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAASZJREFUOI3NjzFLw0AAhb/kmjSFtmAJLeqSyTqIOAgpdBP8B6LgH3DWH6E4FsTFoYMgCIJo3cTNDi6dFKxWcLCDIA3UIbRNc04JFmlaMvm2e3fvu/eUzYPP+6/3hzIxZFp2XVnbuZZxwoES0zySErquhzvw8SVkDUHaENMBpATXk1T2bErLcwgVru5a7J8+kjbEZEDX9ajsliivzIaeoQuC3RMB7sBndakAwGG1wfHNG4WMRmbaCUNfktRUAI5qLRbyqZF7NSrcdno0O/3w/PHt0XZ6uP1h6I1t0HZ6PJ9vjHjydhuA6uUTJ7VXUrqIbjBOjReHhFCiG8zPJFncuqDZ6Yc/K+tnFHM6+ayGJtRoQAD5rWJO/+PFmvDPAKZl1+OGTcuu/wDgOVdtTTDBbAAAAABJRU5ErkJggg=="/>
+</a>
+</div>
+<div class="link">
+<a href="https://www.reddit.com/r/startpages">
+                            Startpages <img class="link-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAV1BMVEVHcEz/RAD/RAD/RQD/QgD/RAD/RAD/RAD/PwD/OwD/RAD/RAD//fz/SAX/8+//bjj/hFf/on//6eH/xK7/VRX/uqD/kmr/tZr/3dH/qor/YSb/XCD/1MWs8J9KAAAAC3RSTlMAku7tSOT7qhgGkZoDmNkAAAABYktHRACIBR1IAAAAoElEQVQYlV1PSRLDIAwzDYRQG7MlkO3/76wh00Ori0ca25IAAJy2Zp6N1Q4GFvXCgZdaBreDeY8erShOPbzWtK2oHOhpCGtdowiThucAQ5QtmRYM+vOM2763eF2IBmYMOTMTMecccO4CU4rM8SDugkHcqDSio1DxciJPI9HOvBPV/lRsfcp3KTcfvtv2YD6k1lIQWwn2jT5gnzLv33J/9T+4IArXbYNZeAAAAABJRU5ErkJggg=="/>
+</a>
+</div>
+<div class="link">
+<a href="https://www.reddit.com/r/netsec/">
+                            Netsec <img class="link-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAV1BMVEVHcEz/RAD/RAD/RQD/QgD/RAD/RAD/RAD/PwD/OwD/RAD/RAD//fz/SAX/8+//bjj/hFf/on//6eH/xK7/VRX/uqD/kmr/tZr/3dH/qor/YSb/XCD/1MWs8J9KAAAAC3RSTlMAku7tSOT7qhgGkZoDmNkAAAABYktHRACIBR1IAAAAoElEQVQYlV1PSRLDIAwzDYRQG7MlkO3/76wh00Ori0ca25IAAJy2Zp6N1Q4GFvXCgZdaBreDeY8erShOPbzWtK2oHOhpCGtdowiThucAQ5QtmRYM+vOM2763eF2IBmYMOTMTMecccO4CU4rM8SDugkHcqDSio1DxciJPI9HOvBPV/lRsfcp3KTcfvtv2YD6k1lIQWwn2jT5gnzLv33J/9T+4IArXbYNZeAAAAABJRU5ErkJggg=="/>
+</a>
+</div>
+<div class="link">
+<a href="https://news.ycombinator.com/">
+                            Hackernews <img class="link-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAPZJREFUOI210r1KQ0EQhuFnkxiEKFoJImrhTXgJlmIj2goBW7XxDmwtxFqsBf9q9QIESy/gWAliYZSgyVmLRRDOTxHxq5aZnXdmv50Qu3IEoyk2/lAMoVEazst6lROKgNY87Tn6v2KfaE6kXC0g4ivj6Inl/VQ4wNIGx28pF+sAAe+4vWBzj2e8YOuAu0t6Co61CjN1cLjKeWRll9eM2QW2F5kpelAEBEzi6oT1HfofXJ+mWMl/hdit8DfDWY8QWOtQ9K9igh9N4fGB4YDpyls1AGg2iRUL8P+AcdzfkA/TuULVJpIWKWBslAmgXZtF2sT6R9YrfgNQuz3Rb/upsgAAAABJRU5ErkJggg=="/>
+</a>
+</div>
+</div>
+</div>
+<div class="card hideable">
+<div class="card-title">Hideable Card</div>
+<div class="card-body">
+<div class="link">
+<a href="https://portal.office.com">
+                            O365 Portal <img class="link-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAIxJREFUOI3tkrsNwlAMRY8/IApYglWQUrMDW6RgsIzADhkBCQUJiac8TAGlE9HQ5Za+9vGVbBmO+yCRi+ADXXvu2Y00r5p1gebl37UAwF0kNxRQLAC1GcDm0XepI5jcudwCokBAekjXU5nGlxVxFVjPJKA+m9Qxh/gObznk+8Gp4zQeqwSf8Msn/g/wBlifI4otCSb4AAAAAElFTkSuQmCC"/>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">String.prototype.replaceChars = function(character, replacement) {
+    var str = this;
+    var a;
+    var b;
+    for(var i=0; i < str.length; i++) {
+        if(str.charAt(i) == character) {
+            a = str.substr(0, i) + replacement;
+            b = str.substr(i + 1);
+            str = a + b;
+        }
+    }
+    return str;
+}
+
+Number.prototype.normalize = function() {
+    if (this.valueOf() < 10) {
+        return "0"+this.valueOf();
+    }
+    return "" +this.valueOf();
+}
+
+/*
+ *
+ *
+ */
+function updateClock() {
+    var date = new Date();
+    document.getElementById("time").innerHTML = date.getHours().normalize() + ":" + date.getMinutes().normalize() + ":" + date.getSeconds().normalize();
+}
+
+/*
+ *
+ *
+ */
+function updateDate() {
+    var date = new Date();
+    document.getElementById("date").innerHTML = date.getDate().normalize() + "." + (date.getMonth()+1).normalize() + "." + date.getFullYear();
+}
+
+/*
+ *
+ *
+ */
+function hideable_value_restore() {
+    document.getElementById("display_hideable_cards").checked = (localStorage.getItem("display_hideable_cards") == 'true');
+}
+
+/*
+ *
+ *
+ */
+function hideable_value_store() {
+    localStorage.setItem("display_hideable_cards", document.getElementById("display_hideable_cards").checked);
+    this.set_card_visibliy();
+}
+
+/*
+ *
+ *
+ */
+function set_card_visibliy() {
+    var work_divs = document.getElementsByClassName("hideable");
+
+    for (let index = 0; index < work_divs.length; index++) {
+        const element = work_divs[index];
+        // If the checkbox is checked, display the output text
+        if (localStorage.getItem("display_hideable_cards") == 'true'){
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    }
+}
+
+/*
+ *
+ *
+ */
+function search(query){
+    switch(query.substr(0, 2)){
+        case "-d":
+            query = query.substr(3);
+            window.location = "https://duckduckgo.com/?q=" +
+            query.replaceChars(" ", "+");
+            break;
+        
+        case "-g":
+            query = query.substr(3);
+            window.location="https://www.google.at/search?q=" +
+            query.replaceChars("", "+");
+            break;
+
+        case "-r":
+            query = query.substr(3);
+            window.location = "https://www.reddit.com/search?q=" +
+            query.replaceChars(" ", "+");
+            break;
+
+        case "-y":
+            query = query.substr(3);
+            window.location =
+            "https://www.youtube.com/results?search_query=" +
+            query.replaceChars(" ", "+");
+            break;
+        default:
+            window.location="https://www.startpage.com/do/dsearch?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a0c1c89932309a9bc5065027ac0acf304745625d261b6aec0&query=" +
+            query.replaceChars("", "+");
+    }
+}
+
+window.onload = function() {
+    // date and time
+    this.updateClock();
+    this.updateDate();
+    this.setInterval(updateClock, 1000);
+
+    // hideable cards
+    if (localStorage.getItem("display_hideable_cards")) {
+        this.hideable_value_restore();
+        this.set_card_visibliy();
+    } else {
+        this.hideable_value_store();
+    }
+
+    // search-bar
+    searchinput = document.getElementById("search-bar");
+    if(!!searchinput){
+        searchinput.addEventListener("keypress", function(a){
+            var key = a.keyCode;
+            if(key == 13){
+                var query = this.value;
+                search(query);
+            }
+        });
+    }
+    // jump to search when tab is pressed
+    var search_sqr = document.getElementById("search-bar");
+}</script>
+</body>
+</html>
