@@ -39,6 +39,14 @@ To generate a new Startpage, the only requirement is [Python3](https://www.pytho
 - Optionally install development requirements (linter, code formatter ...)  
   `pip install -r requirements-dev.txt`
 
+## Visual Studio Code Tasks
+
+If you use Visual Studio Code you can open the folder and run one of the provided tasks which essentially run the next steps automatically:
+- Prepare Assets
+- Build Site
+- Build All
+
+Else you can also run those next steps manually.
 
 ## Prepare source files
 
