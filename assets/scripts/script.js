@@ -19,45 +19,31 @@ Number.prototype.normalize = function() {
     return "" +this.valueOf();
 }
 
-/*
- *
- *
- */
+/* Update the current time  */
 function updateClock() {
     var date = new Date();
     document.getElementById("time").innerHTML = date.getHours().normalize() + ":" + date.getMinutes().normalize() + ":" + date.getSeconds().normalize();
 }
 
-/*
- *
- *
- */
+/* Update the date */
 function updateDate() {
     var date = new Date();
     document.getElementById("date").innerHTML = date.getDate().normalize() + "." + (date.getMonth()+1).normalize() + "." + date.getFullYear();
 }
 
-/*
- *
- *
- */
+/* Set or reset the checkbox value */ 
 function hideable_value_restore() {
     document.getElementById("display_hideable_cards").checked = (localStorage.getItem("display_hideable_cards") == 'true');
 }
 
-/*
- *
- *
- */
+/* Stores the checkbox status into localStorage and then updates card visiblity */
 function hideable_value_store() {
     localStorage.setItem("display_hideable_cards", document.getElementById("display_hideable_cards").checked);
     this.set_card_visibliy();
 }
 
-/*
- *
- *
- */
+/* Iterates through all "hideable" divs and either sets
+ * them visible or hides them. */
 function set_card_visibliy() {
     var work_divs = document.getElementsByClassName("hideable");
 
@@ -72,9 +58,8 @@ function set_card_visibliy() {
     }
 }
 
-/*
- *
- *
+/* Search function. Either uses the keywords with the defined search engines, directly
+ * opens the site in a new tab or uses the default search engine (startpage). 
  */
 function search(query){
     switch(query.substr(0, 2)){
