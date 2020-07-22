@@ -58,29 +58,47 @@ function set_card_visibliy() {
     }
 }
 
+/* Check if a string is a URL/Domain */
+function is_url(str)
+{
+    regexp =  /^(?:(?:https?):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
+    if (regexp.test(str)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 /* Search function. Either uses the keywords with the defined search engines, directly
  * opens the site in a new tab or uses the default search engine (startpage). 
  */
 function search(query){
     switch(query.substr(0, 2)){
+        // Duckduckgo - search with DDGO.
         case "-d":
             query = query.substr(3);
             window.location = "https://duckduckgo.com/?q=" +
             query.replaceChars(" ", "+");
             break;
-        
+        // DeepL - Translate Text from German to English
+        case "-t":
+            query = query.substr(3);
+            window.location = "https://www.deepl.com/en/translator#de/en/" +
+            encodeURIComponent(query)
+            break;
+        // Google - Google Search
         case "-g":
             query = query.substr(3);
             window.location="https://www.google.at/search?q=" +
             query.replaceChars("", "+");
             break;
-
+        // Reddit - Reddit Search
         case "-r":
             query = query.substr(3);
             window.location = "https://www.reddit.com/search?q=" +
             query.replaceChars(" ", "+");
             break;
-
+        // Youtube - Youtube Search
         case "-y":
             query = query.substr(3);
             window.location =
@@ -88,8 +106,16 @@ function search(query){
             query.replaceChars(" ", "+");
             break;
         default:
-            window.location="https://www.startpage.com/do/dsearch?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a0c1c89932309a9bc5065027ac0acf304745625d261b6aec0&query=" +
-            query.replaceChars("", "+");
+            if (is_url(query)) {
+                if (! query.startsWith("http")) {
+                    query = "https://"+query;
+                }
+                window.location = query;
+            } else {
+                // use startpage as default search with dark mode enabled as default
+                window.location="https://www.startpage.com/do/dsearch?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a0c1c89932309a9bc5065027ac0acf304745625d261b6aec0&query=" +
+                query.replaceChars("", "+");
+            }
     }
 }
 
