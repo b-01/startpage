@@ -31,7 +31,7 @@ function updateDate() {
     document.getElementById("date").innerHTML = date.getDate().normalize() + "." + (date.getMonth()+1).normalize() + "." + date.getFullYear();
 }
 
-/* Set or reset the checkbox value */ 
+/* Set or reset the checkbox value */
 function hideable_value_restore() {
     document.getElementById("display_hideable_cards").checked = (localStorage.getItem("display_hideable_cards") == 'true');
 }
@@ -70,7 +70,7 @@ function is_url(str)
 }
 
 /* Search function. Either uses the keywords with the defined search engines, directly
- * opens the site in a new tab or uses the default search engine (startpage). 
+ * opens the site in a new tab or uses the default search engine (startpage).
  */
 function search(query){
     switch(query.substr(0, 2)){
@@ -113,7 +113,7 @@ function search(query){
                 window.location = query;
             } else {
                 // use startpage as default search with dark mode enabled as default
-                window.location="https://www.startpage.com/do/dsearch?prfe=36c84513558a2d34bf0d89ea505333ad59fcc4f8848a538a0c1c89932309a9bc5065027ac0acf304745625d261b6aec0&query=" +
+                window.location="https://www.startpage.com/do/dsearch?prfe=4fb272a9fd7b618b9a28a5d2ca2896e5833d809fd708caa6aa28761082f8ab66dc198d69e09c17028ae46f98d6d92b81c61756ec7b4f2ba024a855760df61e44557d06214932bd14d869d7d42ebf4f164748&query=" +
                 query.replaceChars("", "+");
             }
     }
